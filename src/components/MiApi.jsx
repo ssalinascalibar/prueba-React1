@@ -7,9 +7,7 @@ const MiApi = () => {
     // 3. info guardará los valores traídos desde la API 
     const [buscarPersonajes, setBuscarPersonajes] = useState('');
    
-    
-    const [sortAz, setSortAz] = useState('');
-    
+    const [sortAz, setSortAz] = useState(''); // estado para ordenar los personajes
     
     const [personajes, setPersonajes] = useState([]);
     const [hechizos, setHechizos] = useState([]);
@@ -67,8 +65,8 @@ const MiApi = () => {
             <h1>Harry Potter</h1>
             <form >
                 <input onChange={filtrarPorPersonaje} value={buscarPersonajes} className="form-control" type="text" placeholder="Busca un personaje"/>
-                <button onClick={() => setSortAz('1')} >Ordenar de la A a Z</button>
-                <button onClick={() => setSortAz('0')} >Ordenar de la Z a A</button>
+                <button onClick={() => setSortAz('1')} type="button">Ordenar de la A a Z</button>
+                <button onClick={() => setSortAz('0')} type="button">Ordenar de la Z a A</button>
                 {/* <select onChange={(e) => setSortAz(e.target.value)} value={sortAz} className="form-select" aria-label="Default select example">
                     <option selected>Open this select menu</option>
                     <option value={sortAz}>Ordena de A-Z</option>
@@ -85,11 +83,21 @@ const MiApi = () => {
                 ) {
                     return e;
                 }
-                }).sort((e, e2) => (console.log(sortAz) === '1')?(e.apodo < e2.apodo):(e.apodo > e2.apodo))
+                }).sort((e, e2) => {
+                    if (sortAz === '1')
+                        return (e.apodo > e2.apodo)?1:((e.apodo < e2.apodo)?-1:0)
+                    else if (sortAz === '0')
+                        return (e.apodo < e2.apodo)?1:((e.apodo > e2.apodo)?-1:0)
+                }
+                )
                 
-                
-                
-                // .sort((e, e2) => (e.apodo > e2.apodo) ? 1 : (e.apodo < e2.apodo) ? -1 : 0)
+                // sort((e, e2) => (
+                //     (sortAz === '1')?(e.apodo > e2.apodo)?1:((e.apodo < e2.apodo)?-1:0)
+                //     :
+                //     (sortAz === '0')?(e.apodo < e2.apodo)?1:((e.apodo > e2.apodo)?-1:0)
+                //     :0
+                // )
+                // )
                 
                 .map(p =>
                 <div className='col-12 col-md-6 col-lg-3 text-white mb-4' key={p.personaje}>
