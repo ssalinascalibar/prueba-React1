@@ -37,8 +37,8 @@ const MiApi = () => {
     const consultarInformacionHechizos = async () => {
         const url = 'https://fedeperin-harry-potter-api.herokuapp.com/hechizos'; 
         const response = await fetch(url)
-        const data = await response.json()
-        
+        let data = await response.json()
+        data = data.replace();
         // data.forEach(d => {
         //     d['hechizos_iso'] = ''
             
