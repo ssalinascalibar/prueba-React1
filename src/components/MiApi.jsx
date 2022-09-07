@@ -90,7 +90,7 @@ const MiApi = () => {
                         return (e.apodo < e2.apodo)?1:((e.apodo > e2.apodo)?-1:0)
                 }
                 )
-                
+                // opción con operador ternario, misma solución
                 // sort((e, e2) => (
                 //     (sortAz === '1')?(e.apodo > e2.apodo)?1:((e.apodo < e2.apodo)?-1:0)
                 //     :
