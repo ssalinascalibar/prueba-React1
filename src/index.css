@@ -20,7 +20,11 @@ code {
 }
 
 body{
-  background-color: #000000;
+  background-image: url(/src/assets/img/bkgBody.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 } 
 
 .card {
@@ -57,7 +61,7 @@ body{
 }
 
 .container{
-  background: linear-gradient(to top left, #ceb175 20%, #000000 100%);
+  padding: 0 3rem;
 }
 
 form{

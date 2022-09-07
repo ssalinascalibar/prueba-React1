@@ -4,7 +4,7 @@ import MiApi from './components/MiApi';
 function App() {
   return (
     <div>
-      <div className="container px-4">
+      <div className="container">
         <MiApi />
       </div>
     </div>
