@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from "react";
 import Modal from './Modal';
-import logo from '../assets/img/h3.png'
+import logo from '../assets/img/harry-logo.png'
 
 const MiApi = () => {
 
