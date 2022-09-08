@@ -123,7 +123,7 @@ const MiApi = () => {
         </div>
         <section className='hechizos'>
                 <div className='row gx-4'>
-                    <h2>Hechizos</h2>
+                    <h2 className='section-title'>Hechizos</h2>
                     {hechizos.map(h =>
                         <div className='col-6 col-md-6 col-lg-3 text-white mb-2' key={h.id}>
                             
