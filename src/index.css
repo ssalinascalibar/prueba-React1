@@ -25,7 +25,55 @@ body{
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-} 
+}
+
+header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background: rgba(0,0,0,0.4);
+  margin: 0 0 2rem 0;
+  padding: 1rem 0;
+}
+
+.logo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  
+
+}
+
+.logo img{
+  width: 60%;
+}
+
+.header-title{
+  position: absolute;
+  top: 60%;
+  left: 66%;
+  font-family: 'IM Fell DW Pica', serif;
+  color: #bbc2c6;
+  font-size: 3em;
+  
+
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form input{
+  margin: 0.5rem 0;
+}
+
+form button{
+  margin: 0.5rem;
+}
 
 .card {
   text-align: center;
@@ -60,7 +108,7 @@ body{
   
 }
 
-.content{
+main{
   padding: 0 5rem;
 }
 
@@ -72,17 +120,6 @@ form{
 .modal{
   color: #000000;
   font-family: 'IM Fell DW Pica', serif;
-}
-
-.divModal{
-  /* background: linear-gradient(to top left, #73b9b6 30%, #000000 100%); */
-  border: 1px solid;
-  padding: 10px;
-  text-align: center;
-  box-shadow: 5px 5px 8px #000000;
-  font-family: 'IM Fell DW Pica', serif;
-  margin: 0 1rem;
-  color: rgba(0,0,0,0.5);
 }
 
 .card-hechizos {
@@ -103,7 +140,7 @@ form{
 }
 
 
-.hechizos{
+.hechizos-section{
   padding: 1rem;
   text-align: center;
   background-color: #f8f5ded2;
@@ -113,6 +150,7 @@ form{
   inset 0 0 30px rgba(220,120,0,0.8);
   color: rgba(0,0,0,0.5);
   border-radius: 10px;
+  margin: 2rem 0;
 }
 
 .openedModal{
