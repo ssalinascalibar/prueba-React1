@@ -42,7 +42,7 @@ const MiApi = () => {
         // Se crea una nueva propiedad en el array para luego utilizar hechizo_iso
         // para luego reemplazar los caracteres '/' y espacios ' ' que no permitían desplegar el Modal de Bootstrap
         data.forEach(d => {
-             d['hechizo_iso'] = d.hechizo.replace('/','').replace(' ', '')
+             d['hechizo_iso'] = d.hechizo.replace('/','').replaceAll(' ', '')
              
         })
 
@@ -62,73 +62,78 @@ const MiApi = () => {
     
 
   return (
-    <div className='content'>
-        <header>
-            <h1>Harry Potter</h1>
-            <form >
-                <input onChange={filtrarPorPersonaje} value={buscarPersonajes} className="form-control" type="text" placeholder="Busca un personaje"/>
-                <button onClick={() => setSortAz('1')} type="button">Ordenar de la A a Z</button>
-                <button onClick={() => setSortAz('0')} type="button">Ordenar de la Z a A</button>
-                {/* <select onChange={(e) => setSortAz(e.target.value)} value={sortAz} className="form-select" aria-label="Default select example">
-                    <option selected>Open this select menu</option>
-                    <option value={sortAz}>Ordena de A-Z</option>
-                    <option value=''>Ordena de </option>
-                    
-                </select> */}
-            </form>
-        </header>
-        <div className='row gx-4'>
-            {personajes.filter((e) => {
-                if(buscarPersonajes === '') {
-                    return e;
-                } else if (e.apodo.toLocaleLowerCase().startsWith(buscarPersonajes.toLocaleLowerCase())
-                ) {
-                    return e;
-                }
-                }).sort((e, e2) => {
-                    if (sortAz === '1')
-                        return (e.apodo > e2.apodo)?1:((e.apodo < e2.apodo)?-1:0)
-                    else if (sortAz === '0')
-                        return (e.apodo < e2.apodo)?1:((e.apodo > e2.apodo)?-1:0)
-                }
-                )
-                // opción con operador ternario, misma solución
-                // sort((e, e2) => (
-                //     (sortAz === '1')?(e.apodo > e2.apodo)?1:((e.apodo < e2.apodo)?-1:0)
-                //     :
-                //     (sortAz === '0')?(e.apodo < e2.apodo)?1:((e.apodo > e2.apodo)?-1:0)
-                //     :0
-                // )
-                // )
-                
-                .map(p =>
-                <div className='col-12 col-md-6 col-lg-3 text-white mb-4' key={p.personaje}>
-                    <div className='card' >
-                        <div className='card-header'><h5>{p.personaje}</h5></div>    
-                        <img src={p.imagen} className="card-img-top" alt="..."></img>
-                        <div className='card-body'>
-                            <div className='card-title'><h2>{p.apodo}</h2></div>    
-                        </div>
-                        <ul className='list-group list-group-flush'>
-                            <li className='list-group-item list-group-item-dark'>Casa : {p.casaDeHogwarts}</li>
-                        </ul>
-                    </div>
-                </div>    
-            )
-            }
-        </div>
-        
-        <section className='hechizos'>
+    <div>
+        <div className='content'>
+            <header>
+                <h1>Harry Potter</h1>
+                <form >
+                    <input onChange={filtrarPorPersonaje} value={buscarPersonajes} className="form-control" type="text" placeholder="Busca un personaje"/>
+                    <button onClick={() => setSortAz('1')} type="button">Ordenar de la A a Z</button>
+                    <button onClick={() => setSortAz('0')} type="button">Ordenar de la Z a A</button>
+                    {/* <select onChange={(e) => setSortAz(e.target.value)} value={sortAz} className="form-select" aria-label="Default select example">
+                        <option selected>Open this select menu</option>
+                        <option value={sortAz}>Ordena de A-Z</option>
+                        <option value=''>Ordena de </option>
+                        
+                    </select> */}
+                </form>
+            </header>
             <div className='row gx-4'>
-                <h2>Hechizos</h2>
-                {hechizos.map(h =>
-                    <div className='col-4 col-md-6 col-lg-4 text-white mb-2' key={h.id}>
-                        <Modal hechizo_iso={h.hechizo_iso} uso={h.uso}/>
-                    </div>
+                {personajes.filter((e) => {
+                    if(buscarPersonajes === '') {
+                        return e;
+                    } else if (e.apodo.toLocaleLowerCase().startsWith(buscarPersonajes.toLocaleLowerCase())
+                    ) {
+                        return e;
+                    }
+                    }).sort((e, e2) => {
+                        if (sortAz === '1')
+                            return (e.apodo > e2.apodo)?1:((e.apodo < e2.apodo)?-1:0)
+                        else if (sortAz === '0')
+                            return (e.apodo < e2.apodo)?1:((e.apodo > e2.apodo)?-1:0)
+                    }
+                    )
+                    // opción con operador ternario, misma solución
+                    // sort((e, e2) => (
+                    //     (sortAz === '1')?(e.apodo > e2.apodo)?1:((e.apodo < e2.apodo)?-1:0)
+                    //     :
+                    //     (sortAz === '0')?(e.apodo < e2.apodo)?1:((e.apodo > e2.apodo)?-1:0)
+                    //     :0
+                    // )
+                    // )
+                    
+                    .map(p =>
+                    <div className='col-12 col-md-6 col-lg-3 text-white mb-4' key={p.personaje}>
+                        <div className='card' >
+                            <div className='card-header'><h5>{p.personaje}</h5></div>    
+                            <img src={p.imagen} className="card-img-top" alt="..."></img>
+                            <div className='card-body'>
+                                <div className='card-title'><h2>{p.apodo}</h2></div>    
+                            </div>
+                            <ul className='list-group list-group-flush'>
+                                <li className='list-group-item list-group-item-dark'>Casa : {p.casaDeHogwarts}</li>
+                            </ul>
+                        </div>
+                    </div>    
                 )
                 }
             </div>
-        </section>
+            
+            
+        </div>
+        <section className='hechizos'>
+                <div className='row gx-4'>
+                    <h2>Hechizos</h2>
+                    {hechizos.map(h =>
+                        <div className='col-6 col-md-6 col-lg-3 text-white mb-2' key={h.id}>
+                            
+                                <Modal hechizo_iso={h.hechizo_iso} uso={h.uso}/>
+                            
+                        </div>
+                    )
+                    }
+                </div>
+            </section>
     </div>
   )
 }

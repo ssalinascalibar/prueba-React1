@@ -4,8 +4,8 @@ const Modal = ({hechizo_iso, uso}) => {
   return (
     <div>
         
-        <div className="divModal" data-bs-toggle="modal" data-bs-target={'#' + hechizo_iso}>
-        {hechizo_iso}
+        <div className="card card-hechizos" data-bs-toggle="modal" data-bs-target={'#' + hechizo_iso}>
+            <p>{hechizo_iso}</p>
         </div>
 
         {/* Modal */}
