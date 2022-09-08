@@ -37,12 +37,14 @@ const MiApi = () => {
     const consultarInformacionHechizos = async () => {
         const url = 'https://fedeperin-harry-potter-api.herokuapp.com/hechizos'; 
         const response = await fetch(url)
-        let data = await response.json()
-        data = data.replace();
-        // data.forEach(d => {
-        //     d['hechizos_iso'] = ''
-            
-        // })
+        const data = await response.json()
+        
+        // Se crea una nueva propiedad en el array para luego utilizar hechizo_iso
+        // para luego reemplazar los caracteres '/' y espacios ' ' que no permitían desplegar el Modal de Bootstrap
+        data.forEach(d => {
+             d['hechizo_iso'] = d.hechizo.replace('/','').replace(' ', '')
+             
+        })
 
 
         console.log(data)
@@ -121,7 +123,7 @@ const MiApi = () => {
                 <h2>Hechizos</h2>
                 {hechizos.map(h =>
                     <div className='col-4 col-md-6 col-lg-4 text-white mb-2' key={h.id}>
-                        <Modal hechizo={h.hechizo} uso={h.uso}/>
+                        <Modal hechizo_iso={h.hechizo_iso} uso={h.uso}/>
                     </div>
                 )
                 }
