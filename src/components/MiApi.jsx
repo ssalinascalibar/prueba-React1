@@ -127,7 +127,7 @@ const MiApi = () => {
                     {hechizos.map(h =>
                         <div className='col-6 col-md-6 col-lg-3 text-white mb-2' key={h.id}>
                             
-                                <Modal hechizo_iso={h.hechizo_iso} uso={h.uso}/>
+                            <Modal hechizo_iso={h.hechizo_iso} uso={h.uso}/>
                             
                         </div>
                     )
