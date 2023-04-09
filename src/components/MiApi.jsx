@@ -22,7 +22,8 @@ const MiApi = () => {
 
     // 1. Función que consulta la API
     const consultarInformacion = async () => {
-        const url = 'https://fedeperin-harry-potter-api.herokuapp.com/personajes'; 
+        // const url = 'https://fedeperin-harry-potter-api.herokuapp.com/personajes'; 
+        const url = 'https://harry-potter-api.onrender.com/personajes'; 
         const response = await fetch(url)
         const data = await response.json()
 
@@ -36,7 +37,8 @@ const MiApi = () => {
     }
 
     const consultarInformacionHechizos = async () => {
-        const url = 'https://fedeperin-harry-potter-api.herokuapp.com/hechizos'; 
+        // const url = 'https://fedeperin-harry-potter-api.herokuapp.com/hechizos'; 
+        const url = 'https://harry-potter-api.onrender.com/hechizos'; 
         const response = await fetch(url)
         const data = await response.json()
         
