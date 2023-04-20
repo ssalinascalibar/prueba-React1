@@ -21,7 +21,8 @@ code {
 
 body{
   background-image: url(/src/assets/img/bkgBody.jpeg);
-  background-position: center center;
+  height: 100vh;
+  background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
