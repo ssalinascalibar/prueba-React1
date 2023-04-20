@@ -21,11 +21,10 @@ code {
 
 body{
   background-image: url(/src/assets/img/bkgBody.jpeg);
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  height: 100%;
 }
 
 header{
