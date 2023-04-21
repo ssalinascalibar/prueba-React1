@@ -20,13 +20,30 @@ code {
 }
 
 body{
+  position: relative;
+}
+
+body::after{
+  content: "";
+  background-image: url(/src/assets/img/bkgBody.jpeg); /* Your image url */
+  background-repeat: no-repeat;  /* Don't repeat the img */
+  background-size: cover; /* Cover the entire screen */
+  background-position: center; /* Pull img to center */
+  position: fixed;  /* Fix the img */
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right:0;
+  z-index: -1;
+}
+
+/* body{
   background-image: url(/src/assets/img/bkgBody.jpeg);
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  -webkit-touch-callout: inherit;
-}
+} */
 
 header{
   display: flex;
