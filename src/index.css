@@ -5,7 +5,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-attachment: fixed;
 }
 
 code {
@@ -20,14 +19,14 @@ code {
   
 }
 
-/* :root { background-attachment: fixed; } */
-
 body{
   background-image: url(/src/assets/img/bkgBody.jpeg);
   background-position: center center;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   /* background-attachment: fixed; */
   background-size: cover;
+  height: 100vh;
+  width: 100%;
 }
 
 header{
