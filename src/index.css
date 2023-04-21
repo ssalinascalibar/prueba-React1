@@ -19,6 +19,8 @@ code {
   
 }
 
+:root { background-attachment: fixed; }
+
 body{
   background-image: url(/src/assets/img/bkgBody.jpeg);
   background-position: center center;
