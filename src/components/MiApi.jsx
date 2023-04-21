@@ -65,7 +65,7 @@ const MiApi = () => {
     
 
   return (
-    <div>
+    <div className='cuerpo'>
         <header>
             <div className='logo'>
                 <img src={logo} alt="harryPotter" />
