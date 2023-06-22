@@ -158,14 +158,14 @@ form{
   background-image: linear-gradient(to right, rgba(255,210,0,0.4),
    rgba(200, 160, 0, 0.1) 11%, rgba(0,0,0,0) 35%, rgba(200, 160, 0, 0.1) 65%);
   border: 1px solid #ceb175;
-  box-shadow: 5px 3px 8px #000000;
+  box-shadow: 1px 2px 3px #000000;
   border-radius: 15px;
   font-family: 'IM Fell DW Pica', serif;
   color: rgba(0,0,0,0.5);
 }
 
 .card-hechizos:hover{
-  opacity: 0.6;
+  box-shadow: 1px 2px 3px #000000 inset;
 }
 
 
@@ -191,7 +191,7 @@ form{
 .section-title {
   color: rgba(0,0,0,0.7);
   float:left;
-  font-size: 3em;
+  font-size: 2em;
   font-family: 'IM Fell DW Pica', serif;
 }
 
